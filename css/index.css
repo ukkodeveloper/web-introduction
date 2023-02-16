@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+* {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+h1,
+h2 {
+  font-size: 20px;
+}
+
+div {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 800px;
+  border: solid gray;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+th {
+  border-bottom: solid black 1px;
+}
+
+.poster img {
+  width: 100px;
+  border-radius: 10% 30% 50% 70%;
+}
+
+td,
+th {
+}
+
+#th-rank {
+  width: 50px;
+}
+
+#th-title {
+  width: 100px;
+}
+
+#th-summary {
+  width: 450px;
+}
+
+#th-link {
+  width: 100px;
+}
+
+.title,
+.link {
+  text-align: center;
+}
+
+tr {
+  height: 150px;
+  border: solid seagreen;
+  border-radius: 10px;
+}
+
+td {
+  padding: 5px;
+}
+
+.form-div {
+  margin-left: 10px;
+  width: 200px;
+}
