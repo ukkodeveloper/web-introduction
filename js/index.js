@@ -1,13 +1,31 @@
-const form = document.querySelector('#guest-form');
-form.addEventListener('submit', (event) => {
-  console.log('hi');
-  event.preventDefault();
-  const name = document.querySelector('#name').value;
-  const count = document.querySelectorAll('input[type="checkbox"]:checked').length;
-  alert(`${name}님, 저와 ${count}개의 취향이 같으시네요!`);
+const initRendering = () => {
+  const movieTitles = document.querySelectorAll('.title');
+  const checkboxLabels = document.querySelectorAll('.checkbox-label');
 
-  document.querySelectorAll('input[type="checkbox"]:checked').forEach((checkbox) => {
-    checkbox.checked = false;
+  checkboxLabels.forEach((label, index) => {
+    label.innerHTML = movieTitles[index].innerHTML;
   });
-  document.querySelector('#name').value = '';
-});
+
+  addFormEvent();
+};
+
+const addFormEvent = () => {
+  const form = document.querySelector('#guest-form');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const userName = document.querySelector('#name');
+    const checkboxesChecked = document.querySelectorAll('input[type="checkbox"]:checked');
+
+    const message = checkboxesChecked.length
+      ? `저와 ${checkboxesChecked.length}개의 취향이 같으시네요! 😜`
+      : '저랑 영화 취향만큼은 다른 걸로... 🥲 ';
+    alert(`${userName.value}님! ${message}`);
+
+    checkboxesChecked.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+    userName.value = '';
+  });
+};
+
+initRendering();
